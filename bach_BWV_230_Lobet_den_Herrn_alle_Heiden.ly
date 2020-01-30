@@ -503,7 +503,7 @@ trackb = \relative c {
     a g2
     %% 165
     g2.\fermata
-    
+    \bar "|."
 }
 
 
@@ -752,6 +752,7 @@ trackc = \relative c {
     e8 f d4. ( e8 )
     %% 165
     e2.\fermata
+    \bar "|."
 }
 
 
@@ -999,6 +1000,7 @@ trackd = \relative c {
     f g g,
     %% 165
     c2.\fermata
+    \bar "|."
 }
 
 
@@ -1236,43 +1238,58 @@ tracke = \relative c {
     f g g,
     %% 165
     c,2.\fermata
+    \bar "|."
 }
 
-\score {
-   \unfoldRepeats {
-       \new GrandStaff <<
-       \new Staff {
-           \clef violin 
-           <<
-              \tracka
-           >>
-       }
-       \new Staff {
-           \clef violin 
-           <<
-              \trackb
-           >>
-       }
-       \new Staff {
-           \clef alto
-           <<
-              \trackc
-           >>
-       }
-       \new Staff {
-           \clef bass 
-           <<
-             \tracke
-           >>
-       }
-       >> % end GrandStaff
+
+\book {
+  \bookOutputSuffix "score"
+  \score {
+    \unfoldRepeats {
+      \new GrandStaff <<
+        \new Staff { \clef violin << \tracka >> }
+        \new Staff { \clef violin << \trackb >> }
+        \new Staff { \clef alto << \trackc >> }
+        \new Staff { \clef bass << \tracke >> }
+      >> % end GrandStaff
     }
-   \layout {}
-   \midi {
+    \layout { }
+    \midi {
       \context {
-         \Score
-         tempoWholesPerMinute = #(ly:make-moment 140 4)
+        \Score
+        tempoWholesPerMinute = #(ly:make-moment 140 4)
       }
-   }
+    }
+}}
+
+\book {
+  \bookOutputSuffix "oboe"
+  \score {
+    \new Staff { \compressFullBarRests \clef violin << \tracka >> }
+    \layout { }
+}}
+
+\book {
+  \bookOutputSuffix "violin"
+  \score {
+    \new Staff { \compressFullBarRests \clef violin << \trackb >> }
+    \layout {}
+  }
+}
+
+\book {
+  \bookOutputSuffix "viola"
+  \score {
+    \new Staff { \compressFullBarRests \clef alto << \trackc >> }
+    \layout {}
+  }
+}
+
+\book {
+  \bookOutputSuffix "cello"
+  \score {
+    \new Staff { \compressFullBarRests \clef bass << \tracke >> }
+    \layout {}
+  }
 }
 
