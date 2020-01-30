@@ -33,7 +33,6 @@
   after-title-space = #0.1
   ragged-last-bottom = ##f %% stretch and center systems of last page
   %% annotate-spacing = ##t
-  #(ly:set-option 'point-and-click #f) %% for smaller PDFs
 }
 
 \layout {
@@ -1242,49 +1241,6 @@ tracke = \relative c {
     c,2.\fermata
 }
 
-
-\score { <<
-  \new ChoirStaff << 
-    \new Voice = "tracka" {
-        \set Staff.instrumentName = "Sopran "
-        \clef violin 
-        << \tracka >>
-     }
-     \new Lyrics \lyricsto "tracka" \lyrictracka
-
-    \new Voice = "trackb" {
-        \set Staff.instrumentName = "Alt "
-        \clef violin 
-        << \trackb >>
-     }
-     \new Lyrics \lyricsto "trackb" \lyrictrackb
-
-    \new Voice = "trackc" {
-        \set Staff.instrumentName = "Tenor "
-        \clef "G_8" 
-        << \trackc >>
-     }
-     \new Lyrics \lyricsto "trackc" \lyrictrackc
-
-    \new Voice = "trackd" {
-        \set Staff.instrumentName = "Bass "
-        \clef bass 
-        << \trackd >>
-     }
-     \new Lyrics \lyricsto "trackd" \lyrictrackd
-
-  >>
-    \new Staff {
-        \set Staff.instrumentName = "Continuo "
-        \clef bass 
-        <<
-           \tracke
-        >>
-    }
- >>
-}
-
-
 \score {
    \unfoldRepeats {
        \new GrandStaff <<
@@ -1301,7 +1257,7 @@ tracke = \relative c {
            >>
        }
        \new Staff {
-           \clef violin 
+           \clef alto
            <<
               \trackc
            >>
@@ -1309,11 +1265,18 @@ tracke = \relative c {
        \new Staff {
            \clef bass 
            <<
-              \trackd
+             \trackd
+           >>
+       }
+       \new Staff {
+           \clef bass 
+           <<
+             \tracke
            >>
        }
        >> % end GrandStaff
     }
+   \layout {}
    \midi {
       \context {
          \Score
