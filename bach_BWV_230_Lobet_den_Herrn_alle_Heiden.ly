@@ -323,8 +323,8 @@ trackb = \relative c {
     %% 15
     a a, ( c ) e a1~
     a~ a4 b8 c b4 a
-    g1~ g8 f e d c bes a g
-    f g a4 g g'~ g8 f e f g4 f
+    g1~ g8 f' e d c bes a g
+    f g a4 g g='~ g8 f e f g4 f
     e8 d c d e4 fis g2~ g4 fis
     %% 20
     g2~ g8 f e d c4 c a' g8 f
