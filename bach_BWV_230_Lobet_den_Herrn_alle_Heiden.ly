@@ -1265,14 +1265,16 @@ tracke = \relative c {
 \book {
   \bookOutputSuffix "oboe"
   \score {
-    \new Staff { \compressFullBarRests \clef violin << \tracka >> }
+    \new Staff \with { instrumentName = #"Oboe" }
+    { \compressFullBarRests \clef violin << \tracka >> }
     \layout { }
 }}
 
 \book {
   \bookOutputSuffix "violin"
   \score {
-    \new Staff { \compressFullBarRests \clef violin << \trackb >> }
+    \new Staff \with { instrumentName = #"Violin" }
+    { \compressFullBarRests \clef violin << \trackb >> }
     \layout {}
   }
 }
@@ -1280,7 +1282,8 @@ tracke = \relative c {
 \book {
   \bookOutputSuffix "viola"
   \score {
-    \new Staff { \compressFullBarRests \clef alto << \trackc >> }
+    \new Staff \with { instrumentName = #"Viola" }
+    { \compressFullBarRests \clef alto << \trackc >> }
     \layout {}
   }
 }
@@ -1288,7 +1291,8 @@ tracke = \relative c {
 \book {
   \bookOutputSuffix "cello"
   \score {
-    \new Staff { \compressFullBarRests \clef bass << \tracke >> }
+    \new Staff \with { instrumentName = #"Cello" }
+    { \compressFullBarRests \clef bass << \tracke >> }
     \layout {}
   }
 }
