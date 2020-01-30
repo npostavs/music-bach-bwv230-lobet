@@ -1076,7 +1076,7 @@ tracke = \relative c {
     e4. d8 c4. b8 a4 g8 a b4 a8 b
     c4 d8 e f2~ f4 e8 d e4 g,
     %% 30
-    a4. g8 f4. e8 d4 c8 d e4 d8 e
+    a8 bes a g f g f e d4 c8 d e4 d8 e
     f4 g8 a bes2~ bes4 c8 bes a g f e
     f4 d g f e8 f e d c4 d8 e
     f g f e d4 e8 f g a g f e4 f8 g
@@ -1100,39 +1100,39 @@ tracke = \relative c {
     b c8 b a g fis e fis4 b8 c d2~
     d4 e8 d c b a gis a4 a, a'2~
     %% 50
-    a4. g8 fis4. e8 d4 e8 fis g2~
-    g4. fis8 e4. dis8 e4 fis8 g a2~
+    a8 b a g fis g fis e d4 e8 fis g4 g
+    g8 a g fis e fis e dis e4 fis8 g a2~
     a4 g fis b e,8 dis e fis g2~
-    g4 f e a f d2 e8 f
-    g4 a8 g f4 g8 f e4. d8 c4. b8
+    g4 f e a f d r8 d e f
+    g4 a8 g f4 g8 f e f e d c d c b
     %% 55
     a4 g8 a b4 a8 b c4 d8 e f2~
     f4 e8 d e4 f8 g a b c a d c b a
     b4 g c8 b a g f4 d g2
     c, d4\rest c' a2 d,
-    g1. e2
+    g1 g2 e
     %% 60
     cis1 d2 d2\rest
     d2\rest d'4 c b g c b
     a gis8 a b4 a gis e a g
     f e f2 e d4\rest e
-    a2 a, d1
+    a2 a, d1 (
     %% 65
-    c1. a2
+    c ) c2 a
     fis1 g2 d'2\rest
     d2\rest g4 f e c f e
-    d cis8 d e4 d cis a d c
-    bes a bes2 a d4\rest a'
+    d cis8 d e4 d cis a d ( c )
+    bes ( a ) bes2 a d4\rest a'
     %% 70
-    f e d f a,1~
+    f ( e ) d ( f ) a,1~
     a2 a' a1~
     a2 a,~ a4 b8 cis d4 c
     bes1. a2~
     a g1 f2~
     %% 75
     f e f e
-    d4 c d g c, d e c
-    g'1 d'2\rest b'4 g
+    d'4 ( c ) d ( g, ) c ( d ) e ( c )
+    g'4. g,8 g2 r2 b'4 g
     c2 c,4 e g2 c4 e,
     f e d2 c4 d e c
     %% 80
@@ -1142,7 +1142,7 @@ tracke = \relative c {
     d4 c d e f c f2~
     f e f d4\rest f
     %% 85
-    f,1 d'4\rest f~ f8 es d c
+    f4. f,8 f2 r4 f'~ f8 es d c
     d4 bes bes'2~ bes4 a8 g a4 f~
     f e8 d e4 c'~ c bes8 a bes4 g~
     g f8 e f4 d a'2 a,~
@@ -1151,18 +1151,17 @@ tracke = \relative c {
     a\breve~
     a2 g1 d'4\rest f,
     e a2 g4 f d d' c
-    b2 fis g d'4\rest g,
+    b a8 g fis4 e8 fis g2 r4 g=,
     d'2 g4 b, c2 d4\rest d
     %% 95
-    g, g'8 fis g4 g, a g a b
-    c g c, c' d c d e
+    g, g'8 fis g4 g, a g ( a ) b
+    c ( g ) c, c' d ( c ) d ( e )
     f c f2~ f4 e8 d e4 c
     g'2 g, c, d'2\rest
     \time 3/4
-    \clef violin 
     %% 100
-    << {c''8 d e d c e d2 g4~ g4 f8 e f4} \\ {R2. g,8 a b a g b a4 d, d'} >>
-    \clef bass c,8 d e d c e
+    R2.*3
+    \clef bass c'='8 d e d c e
     g, a b a g b
     a4 d, d'~
     %% 105
@@ -1184,19 +1183,17 @@ tracke = \relative c {
     e4 a, a'~
     a g8 fis e g
     %% 120
-    fis4 a fis
-    b d b
-    e, g e
-    a c a
-    dis, b e~
+    fis g a g fis a
+    b c d c b d
+    e, fis g fis e g
+    a b c b a c
+    dis,4 b e~
     %% 125
     e dis2
-    e4 \clef violin g'8 fis e g
-    fis4 b, b'~
-    b a8 g fis a
-    << {g} \\ {g, a b a g b} >>
+    e4 r r
+    R2.*3
     %% 130
-    \clef bass d, e fis e d fis
+    \clef bass d=8 e fis e d fis
     e4 a, a'~
     a g8 f g e
     f e d e f d
@@ -1260,12 +1257,6 @@ tracke = \relative c {
            \clef alto
            <<
               \trackc
-           >>
-       }
-       \new Staff {
-           \clef bass 
-           <<
-             \trackd
            >>
        }
        \new Staff {
